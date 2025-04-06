@@ -3,16 +3,28 @@ def main():
     idade = 0
     opcao = 0
     while True:
-        print("\n\t\tMENU PRINCIPAL\n")
-        print("1. Fazer cadastro.\n")
-        print("2. Verificar cadastro\n")
-        print("3. Encerrar sessão")
-        opcao = int(input("Escolha uma opção"))
+        print("\t\t\n===MENU PRINCIPAL===")
+        print("\n1.FAZER CADASTRO")
+        print("\n2.CONFERIR CADASTRO")
+        print("\n3.ENCERRAR SESSÃO")
+        opcao =int(input("\n\t\t===ESCOLHA UMA OPÇÃO===\n"))
+
         if opcao == 1:
             nome = input("Qual o seu nome?")
             idade = int(input("Qual a sua idade"))
-            print("Cadastro Realizado com sucesso.")
-            break
+            print("=====CADASTRO REALIZADO=====")
+        elif opcao == 2:
+            if(nome == "" or idade == 0):
+                print("Cadastro ainda não realizado.")
+            else:
+                print("seu nome é", nome, "e sua idade é", idade)
+
         elif opcao == 3:
-            print("Encerrando o sistema. . .")
+            print("Encerrando a sessão. . .")
             break
+        else:
+                print("opção inválida, burro!")
+
+if __name__ == "__main__":
+
+    main() 
