@@ -1,0 +1,27 @@
+def main():
+    produto = ""
+    opcao = 0
+    while True:
+        print("\t\t\n===Menu principal===\n")
+        print("\n1.Criar produto.")
+        print("\n2.Ver produto criado.")
+        print("\n3.Encerrar a sessão.\n")
+        opcao = int(input("\n\t\t===ESCOLHA UMA OPÇÃO===\n"))
+
+        if opcao == 1:
+            produto = input ("Qual o nome do produto?")
+            print("Produto criado com sucesso!")
+        elif opcao == 2:
+            if produto == "":
+                print("Produto ainda não criado")
+            else:
+                print("O nome do seu produto criado é:", produto)
+        elif opcao == 3:
+            print("Encerrando a sessão. . .")
+            break
+        else:
+            print("Opção inválida, locão")
+
+if __name__ == "__main__":
+
+    main()
