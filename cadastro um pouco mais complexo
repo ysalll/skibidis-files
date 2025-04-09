@@ -1,0 +1,36 @@
+def main():
+    nome = ""
+    idade = 0
+    email = ""
+    cidade = ""
+    profissão = ""
+    opcao = 0
+    while True:
+        print("\t\t\n===MENU PRINCIPAL===")
+        print("\n1.FAZER CADASTRO")
+        print("\n2.CONFERIR CADASTRO")
+        print("\n3.ENCERRAR SESSÃO")
+        opcao =int(input("\n\t\t===ESCOLHA UMA OPÇÃO===\n"))
+
+        if opcao == 1:
+            nome = input("Qual o seu nome?")
+            idade = int(input("Qual a sua idade?"))
+            email = input ("Qual o seu e-mail?")
+            cidade = input ("Qual a sua cidade?")
+            profissão = input ("QUal a sua profissão?")
+            print("=====CADASTRO REALIZADO=====")
+        elif opcao == 2:
+            if(nome == "" and idade == 0 and email == "" and cidade == "" and profissão == ""):
+                print("Cadastro ainda não completado.")
+            else:
+                    print(f"seu nome é: {nome}. \nVocê tem: {idade} anos. \nSeu email é: {email}. \nVocê mora na cidade de: {cidade}. \nTrabalhando como: {profissão}.")
+
+        elif opcao == 3:
+            print("Encerrando a sessão. . .")
+            break
+        else:
+                print("opção inválida, burro!")
+
+if __name__ == "__main__":
+
+    main() 
