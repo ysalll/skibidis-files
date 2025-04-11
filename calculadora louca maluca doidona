@@ -1,0 +1,36 @@
+def main():
+    valor1 = 0
+    valor2 = 0
+    opcao = 0
+    resultado = 0
+
+    valor1 = int(input("Qual o primeiro número que deseja usar?\n"))
+    valor2 = int(input("E o segundo?\n"))
+
+    print ("=========Tipos de equações!=========")
+    print ("1.Soma")
+    print ("2.Subtração")
+    print ("3.Multiplicação")
+    print ("4.Divisão")
+    opcao = int(input("Escolha qual tipo de equação você deseja.\n"))
+    #defini os valores e fiz o menu, logo depois do menu eu peço para escolher um número de 1 a 4 para decidir a equação
+
+    if opcao == 1:
+        resultado = valor1 + valor2
+        print(resultado)
+    elif opcao == 2:
+        resultado = valor1 - valor2
+        print(resultado)
+    elif opcao == 3:
+        resultado = valor1 * valor2
+        print(resultado)
+    elif opcao == 4:
+        resultado = valor1 / valor2
+        print(resultado)
+
+    else:
+        print("digita uma opção válida aí doidão")
+        
+if __name__ == "__main__":
+
+    main() 
