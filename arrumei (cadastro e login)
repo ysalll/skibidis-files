@@ -1,0 +1,41 @@
+def main():
+     nome = ""
+     idade = 0
+     profissão = ""
+     Cadastro = False
+     Senha = ""
+     opção = 0
+     while True:
+          print("\n\t\t=======Menu do site=======")
+          print("1.Criar conta.")
+          print("2.Entrar na conta.")
+          print("3.Encerrar sessão.\n")
+          opção = int(input("\t\t===Escolha uma das Opções acima===\n"))
+
+          if opção == 1:
+               nome = input("Qual é o seu nome?\n")
+               idade = int(input("Qual a sua idade?\n"))
+               profissão = input("Qual a sua profissão?\n")
+               senha = input("Qual a senha que deseja escolher?\n")
+               Cadastro = True
+               print("Cadastro feito com sucesso")
+          elif opção == 2:
+               nome_login = input("Nome:")
+               idade_login = int(input("Idade:"))
+               profissão_login = input("Profissão:")
+               senha_login = input("Senha:")
+               if nome_login == nome and idade_login == idade and profissão_login == profissão and senha_login == senha:
+                    print(f"Bem vindo {nome}")
+               else:
+                    print("Algo está incorreto, tente novamente")
+                    continue
+
+          elif opção == 3:
+               print("Encerrando a sessão, até mais. . .")
+               break
+          else:
+               print("Opção inválida!")
+
+if __name__ == "__main__":
+ 
+     main() 
