@@ -1,0 +1,30 @@
+Algoritmo "primeiro"
+//  
+//  
+
+Var
+numero: inteiro
+tabuada: inteiro
+numeromultiplicador: inteiro
+Inicio
+numeromultiplicador <- 1
+repita
+escreval ("Digite um número que deseja ver na tabuada.")
+         leia (numero)
+     se (numero > 10) ou (numero < 10) entao
+fimse
+        escreval ("Digite um numero de 1 a 10")
+ate (numero < 10) e (numero > 0)
+se (numero < 10) e (numero > 0) entao
+para numeromultiplicador de 1 ate 10 faca
+            tabuada <- numero * numeromultiplicador
+            escreval (numero, " X ", numeromultiplicador, " = ", tabuada)
+fimse
+fimpara
+
+
+
+Fimalgoritmo
+fimse
+fimse
+fimalgoritmo
