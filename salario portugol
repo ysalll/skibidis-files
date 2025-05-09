@@ -1,0 +1,24 @@
+Algoritmo "primeiro"
+//Escreva um programa para calcular e mostrar o salário semanal de uma pessoa
+//determinado pelas condições que seguem. Se o numero de horas trabalhadas
+//for inferior a 40, a pessoa recebe R$15 por hora, senão a pessoa recebe
+//R$600 mais R$21 para cada hora extra trabalhada acima de 40 horas.
+//O programa deve pedir o numero de horas trabalhadas como entrada e deve
+//dar o salario como saída
+Var
+horastrabalhadas: inteiro
+horasextras: inteiro
+salariofinal: inteiro
+
+Inicio
+horasextras <- 40
+escreval ("Este programa irá calcular quanto você irá receber na semana")
+escreval ("Quantas horas você trabalhou essa semana?")
+leia (horastrabalhadas)
+se horastrabalhadas > 40 entao
+   salariofinal <- (horastrabalhadas - horasextras) * 21 + 600
+senao
+   salariofinal <- 15 * horastrabalhadas
+fimse
+escreva ("Seu salário essa semana, de acordo com suas horas é:", salariofinal)
+Fimalgoritmo
