@@ -11,7 +11,7 @@ numeromultiplicador <- 1
 repita
 escreval ("Digite um número que deseja ver na tabuada.")
          leia (numero)
-     se (numero > 10) ou (numero < 10) entao
+     se (numero > 10) ou (numero < 0) entao
 fimse
         escreval ("Digite um numero de 1 a 10")
 ate (numero < 10) e (numero > 0)
