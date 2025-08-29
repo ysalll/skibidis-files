@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tarefas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            position: relative;
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        input {
+            padding: 8px;
+            width: 300px;
+        }
+
+        button {
+            padding: 8px 12px;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.8s ease;
+            color: aliceblue; /* corrigido com ponto e vírgula */
+        }
+
+        /* Efeito sutil de expansão */
+        li:hover {
+            font-size: 1.05em;
+            transform: scale(1.02);
+            color: red;
+        }
+
+        /* Estilo dos cérebros subindo */
+        .brain {
+            position: fixed;
+            bottom: -50px;
+            user-select: none;
+            pointer-events: none;
+            animation-timing-function: linear;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="text-align: center;">
+        <h1 style="color:white;">Lista de Tarefas</h1>
+    </div>
+
+    <input type="text" id="novaTarefa" placeholder="Digite sua tarefa aqui">
+    <button id="botaoAdicionar">Adicionar</button>
+
+    <ul id="listaTarefas"></ul>
+
+    <script>
+        // Função para adicionar tarefa na lista
+        document.getElementById("botaoAdicionar").addEventListener("click", adicionarTarefa);
+
+        function adicionarTarefa() {
+            const input = document.getElementById("novaTarefa");
+            const tarefaTexto = input.value.trim();
+
+            if (tarefaTexto === "") {
+                alert("Por favor, digite uma tarefa.");
+                return;
+            }
+
+            const novaTarefa = document.createElement("li");
+            novaTarefa.textContent = tarefaTexto;
+
+            // Remove a tarefa ao clicar nela
+            novaTarefa.addEventListener("click", function () {
+                novaTarefa.remove();
+            });
+
+            document.getElementById("listaTarefas").appendChild(novaTarefa);
+            input.value = ""; // Limpa o campo
+        }
+
+        // Código para emojis de cérebro subindo
+        const numBrains = 60;
+
+        function criarCerebro() {
+            const brain = document.createElement('div');
+            brain.classList.add('brain');
+            brain.textContent = '🧠';
+
+            brain.style.left = Math.random() * window.innerWidth + 'px';
+            const tamanho = 50 + Math.random() * 20;
+            brain.style.fontSize = tamanho + 'px';
+
+            const duracao = 7000 + Math.random() * 8000;
+            let pos = -50;
+
+            document.body.appendChild(brain);
+            const intervaloTempo = duracao / (window.innerHeight + 100);
+
+            const intervalo = setInterval(() => {
+                pos += 1;
+                brain.style.bottom = pos + 'px';
+
+                if (pos > window.innerHeight + 50) {
+                    clearInterval(intervalo);
+                    brain.remove();
+                    criarCerebro();
+                }
+            }, intervaloTempo);
+        }
+
+        for (let i = 0; i < numBrains; i++) {
+            setTimeout(criarCerebro, i * 500);
+        }
+
+        window.addEventListener('resize', () => {
+            // Reações ao redimensionamento da janela (pode ser expandido no futuro)
+        });
+    </script>
+</body>
+</html>
